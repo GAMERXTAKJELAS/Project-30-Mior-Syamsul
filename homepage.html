@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IKML Project Hub</title>
+    <link rel="stylesheet" href="homepage.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        function toggleTheme() {
+            const current = document.documentElement.className;
+            const next = current === 'light-theme' ? 'dark-theme' : 'light-theme';
+            document.documentElement.className = next;
+            localStorage.setItem('app-theme', next);
+        }
+
+        $(function() {
+            const savedTheme = localStorage.getItem('app-theme') || 'dark-theme';
+            document.documentElement.className = savedTheme;
+        });
+    </script>
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <nav class="main-nav">
+            <div class="logo">IKML<span>HUB</span></div>
+            <div class="nav-links">
+                <a href="aboutus.html" class="nav-item">About Us</a>
+                <!-- Black Theme Switcher -->
+                <button onclick="toggleTheme()" class="theme-toggle">🌓</button>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <h1>Digital Ecosystem</h1>
+            <p>Computer Technology (Big Data) Portfolio Projects</p>
+        </header>
+
+        <main class="app-grid">
+            <!-- Project: LAPCC -->
+            <div class="app-card">
+                <div class="logo-box">
+                    <img src="https://lapcc.syamsulock0457.workers.dev/image/LAPCC.jpg" alt="LAPCC Logo" class="project-icon">
+                </div>
+                <div class="app-info">
+                    <span class="category-tag">Education</span>
+                    <h3>Laptop Companion</h3>
+                    <p>Hardware maintenance and diagnostic tool for optimizing student laptops.</p>
+                    <a href="https://lapcc.syamsulock0457.workers.dev/" class="btn-primary">Launch App</a>
+                </div>
+            </div>
+
+            <!-- Project: LostFinder -->
+            <div class="app-card">
+                <div class="logo-box">
+                    <img src="lostfinder-logo.png" alt="LostFinder Logo" class="project-icon">
+                </div>
+                <div class="app-info">
+                    <span class="category-tag">Community</span>
+                    <h3>LostFinder</h3>
+                    <p>Smart community tracking system to report and recover lost items effectively.</p>
+                    <a href="#" class="btn-primary">Launch App</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
